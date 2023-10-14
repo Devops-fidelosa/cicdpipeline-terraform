@@ -42,3 +42,26 @@ Grant this role full access to the Elastic Container Registry (ECR) and SSM Mana
 Attach the Jenkins Role to the Jenkins Server:
 
 Associate the Jenkins role with the Jenkins server to enable interaction with ECR.
+
+# Step-5 :SonarQube Integration with Jenkins:
+Ensure that your SonarQube server is up and running, and it is accessible on port 9000. You can access it via a web browser by navigating to http://your-sonarqube-server:9000.
+
+Initial Configuration:
+
+Upon logging in for the first time, SonarQube may prompt you to change the admin password for security reasons. Follow the on-screen instructions to update the password.
+
+Generate an Authentication Token:
+
+To enable Jenkins to interact with SonarQube, it’s a good practice to generate an authentication token. This token will be used by Jenkins to authenticate with SonarQube.
+Navigate to your SonarQube server by clicking on your username (admin) in the top right corner and selecting “My Account.”
+In the “Security” section, click on “Security” again to access the security settings.
+Click on “Generate Token” to create an authentication token. Provide a name for the token (e.g., “Jenkins Integration”) and click “Generate.”
+
+Configure Jenkins Integration with SonarQube:
+
+*In your Jenkins pipeline or job configuration, you’ll need to configure the integration with SonarQube. This typically involves using the SonarQube Scanner for Jenkins.
+*Install the SonarQube Scanner plugin in Jenkins if not already installed.
+*In your Jenkins job configuration, you should find a section related to SonarQube analysis. Configure it with the following details:
+*SonarQube server URL: http://your-sonarqube-server:9000
+*SonarQube authentication token: Use the token generated in previous step.
+*Other relevant settings, such as project key, sources directory, etc.
