@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/saad946/Jenkins-SonarQube-FluxCD-CICD.git
+    repoURL: https://github.com/Devops-fidelosa/cicdpipeline-terraform.git
     targetRevision: main
     path: kubernetes/myapp
    
