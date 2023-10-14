@@ -4,7 +4,7 @@ pipeline{
 
     environment {
         AWS_ACCOUNT_ID="982291412478"
-        AWS_DEFAULT_REGION="ap-southeast-1"
+        AWS_DEFAULT_REGION="us-east-1"
         IMAGE_REPO_NAME="jenkins-pipeline"
         VERSION = "${env.BUILD_ID}"
         REPOSITORY_URI = "982291412478.dkr.ecr.ap-southeast-1.amazonaws.com/jenkins-pipeline"
@@ -18,7 +18,7 @@ pipeline{
                 
                 script{
                     
-                    git branch: 'main', url: 'https://github.com/saad946/Jenkins-SonarQube-FluxCD-CICD.git'
+                    git branch: 'main', url: 'https://github.com/Devops-fidelosa/cicdpipeline-terraform.git'
                 }
             }
         }
