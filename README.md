@@ -65,3 +65,51 @@ Configure Jenkins Integration with SonarQube:
 *SonarQube server URL: http://your-sonarqube-server:9000
 *SonarQube authentication token: Use the token generated in previous step.
 *Other relevant settings, such as project key, sources directory, etc.
+
+# Step-6 :Maven Build and SonarQube Integration
+To ensure code quality and seamless integration, configure Jenkins to build your code with Maven and integrate it with SonarQube:
+
+Set Up Maven for Building:
+
+Configure Jenkins to build your code using Maven as the build tool.
+Place your Maven file in git root folder which includes mnvw, mnvw.cmd and pom.xml.
+
+# Step-7 :Docker Image Creation and push to AWS ECR
+Once your code passes SonarQube testing, build a Docker image and push it to the Elastic Container Registry (ECR):
+
+Configure Jenkins to Build a Docker Image:
+
+Instruct Jenkins to create a Docker image from your application code.
+Push the Docker Image to ECR:
+
+Store the Docker image in the ECR repository for deployment.
+Remove the Docker Image from the Jenkins Server:
+
+Safely remove the Docker image from the Jenkins server to save space and resources.
+
+# Step-8 :GitHub Actions CI with Datree
+To ensure code quality and adherence to best practices, integrate Datree into your GitHub Actions workflow:
+
+Integrate Datree into GitHub Actions Workflow:
+
+Include Datree as a step in your GitHub Actions workflow.
+Configure Datree to scan your codebase for issues related to Kubernetes Helm charts, YAML files, and other configuration files.
+Offline Mode for Datree:
+
+Utilize Datree in offline mode to check for compliance with best practices even without an internet connection.
+This ensures your CI/CD pipeline remains robust and secure in environments with limited connectivity.
+
+By integrating Datree into your CI/CD pipeline, you ensure that your Kubernetes configurations and Helm charts are in compliance with best practices, enhancing the quality and security of your deployments.
+
+# Step-9 :ArgoCD Deployment to EKS Cluster
+With Datree integrated into your GitHub Actions workflow, you can proceed with the deployment using ArgoCD as previously outlined:
+
+Apply the ArgoCD Helm Chart with Custom Values:
+
+Utilize custom Helm chart values tailored to your deployment requirements.
+Configure ArgoCD Application Sync:
+
+Specify the Git repository and branch that ArgoCD should monitor for changes.
+Configure the ArgoCD application to automatically sync whenever changes are detected.
+
+By combining Datree’s code analysis capabilities with ArgoCD’s automated deployment, you ensure that only high-quality, compliant Kubernetes configurations and Helm charts are deployed to your Elastic Kubernetes Service (EKS) cluster, maintaining a secure and reliable production environment.
